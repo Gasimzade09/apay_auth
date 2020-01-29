@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/apay_auth
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+  jpa:
+    database: postgresql
+    properties:
+      #DISABLE JPA VERSION EXCEPTION
+      hibernate.temp.use_jdbc_metadata_defaults: false
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+jwt:
+  secret: mySecretSignature
+  expiration: 604800
+  header: X-Auth-Token
